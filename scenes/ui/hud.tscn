@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgb4xlvlpuysn"]
+
+[ext_resource type="Script" path="res://scenes/ui/hud.gd" id="1_jv00p"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_jv00p")
+
+[node name="MushroomCounter" type="HBoxContainer" parent="."]
+offset_left = 2.0
+offset_top = 23.0
+offset_right = 42.0
+offset_bottom = 63.0
+
+[node name="MushroomIcon" type="TextureRect" parent="MushroomCounter"]
+layout_mode = 2
+
+[node name="MushroomLabel" type="Label" parent="MushroomCounter"]
+layout_mode = 2
+
+[node name="LivesCounter" type="HBoxContainer" parent="."]
+offset_left = 3.0
+offset_top = 68.0
+offset_right = 43.0
+offset_bottom = 108.0
+
+[node name="LivesLabel" type="Label" parent="LivesCounter"]
+layout_mode = 2
+
+[node name="LivesIcon" type="TextureRect" parent="LivesCounter"]
+layout_mode = 2

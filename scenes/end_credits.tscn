@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkecu8l5p46dx"]
+
+[ext_resource type="Script" path="res://end_credits.gd" id="1_pmcr0"]
+
+[node name="EndCredits" type="CanvasLayer"]
+script = ExtResource("1_pmcr0")
+
+[node name="Thanks for playing" type="Label" parent="."]
+offset_left = 496.0
+offset_top = 271.0
+offset_right = 656.0
+offset_bottom = 320.0
+text = "You found Some!
+Thank you my friend"
+
+[node name="Play Again" type="Button" parent="."]
+offset_left = 527.0
+offset_top = 346.0
+offset_right = 609.0
+offset_bottom = 382.0
+text = "Retry"
+
+[connection signal="pressed" from="Play Again" to="." method="_on_play_again_pressed"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://be57msh18ohl0"]
+
+[ext_resource type="Texture2D" uid="uid://be5lda4owdt8f" path="res://assets/sprites/Orange Mushroom-1.png.png" id="1_eesx2"]
+[ext_resource type="Script" path="res://scenes/level_end.gd" id="1_kh8c3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t0ej6"]
+
+[node name="LevelEnd" type="Area2D"]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_kh8c3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_t0ej6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_eesx2")

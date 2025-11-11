@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://yt1r58r22ik2"]
+
+[ext_resource type="Script" path="res://intro.gd" id="1_thghp"]
+[ext_resource type="Texture2D" uid="uid://be5lda4owdt8f" path="res://assets/sprites/Orange Mushroom-1.png.png" id="2_xan6a"]
+
+[node name="Intro" type="CanvasLayer"]
+script = ExtResource("1_thghp")
+
+[node name="Mushroom finder" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.093
+anchor_bottom = 0.035
+offset_left = 436.0
+offset_top = 258.0
+offset_right = 544.864
+offset_bottom = 345.32
+text = "I could use some
+ mushrooms could you find
+ some for me"
+
+[node name="Start Game" type="Button" parent="."]
+offset_left = 498.0
+offset_top = 407.0
+offset_right = 580.0
+offset_bottom = 447.0
+text = "Start"
+icon = ExtResource("2_xan6a")
+
+[connection signal="pressed" from="Start Game" to="." method="_on_start_game_pressed"]

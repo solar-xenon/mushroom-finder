@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://ch33wj5r5x8k0"]
+
+[ext_resource type="Script" path="res://scenes/block.gd" id="1_87xoy"]
+[ext_resource type="Texture2D" uid="uid://diucjrdnv428v" path="res://assets/tiles/testsheet2.png" id="3_hifrv"]
+
+[sub_resource type="PackedScene" id="PackedScene_4exin"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oh6uv"]
+size = Vector2(31, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y34kl"]
+atlas = ExtResource("3_hifrv")
+region = Rect2(128, 256, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_owovt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y34kl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nvmg"]
+size = Vector2(32, 33)
+
+[node name="Block2" type="StaticBody2D"]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_87xoy")
+item_scene = SubResource("PackedScene_4exin")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_oh6uv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_owovt")
+animation = &"idle"
+
+[node name="BumpDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BumpDetector"]
+light_mask = 2
+visibility_layer = 3
+shape = SubResource("RectangleShape2D_6nvmg")
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+position = Vector2(0, -40)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.316
+one_shot = true
